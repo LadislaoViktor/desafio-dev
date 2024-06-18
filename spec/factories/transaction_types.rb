@@ -1,8 +1,8 @@
 FactoryBot.define do
   factory :transaction_type do
-    type { 1 }
-    description { "MyString" }
-    operation_nature { false }
-    operation_sign { false }
+    code { 1 }
+    description { "Debito" }
+    operation_nature { true }
+    operation_sign { true }
   end
 end
