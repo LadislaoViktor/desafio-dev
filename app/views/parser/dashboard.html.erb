@@ -1,0 +1,29 @@
+<h1>Dashboard</h1>
+<p><%=flash[:alert] %></p>
+<%= form_with(url: "/parser/dashboard", method: :get) do |form| %>
+  <div class="row g-3">
+    <div class="col">
+      <%= form.label :name, "Escolha a loja:" %>
+      <%= form.collection_select(:store_id, @stores, :id, :name, prompt: "Selecione") %>
+    </div>
+    <div class="col">
+      <%= form.submit "Buscar" %>
+    </div>
+  </div>
+<% end %>
+<table>
+  <thead>
+    <th>Empresa</th>
+    <th>Operação</th>
+    <th>Valor</th>
+  </thead>
+  <tbody>
+    <% @transactions.each do |transaction| %>
+      <tr>
+        <td><%= transaction.store.name %></td>
+        <td><%= transaction.transaction_type.description %></td>
+        <td><%= number_to_currency(transaction.value) %></td>
+      </tr>
+    <% end%>
+  </tbody>
+</table>

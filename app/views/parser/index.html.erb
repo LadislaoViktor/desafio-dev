@@ -1,0 +1,9 @@
+<h1>Upload your CNAB file.</h1>
+<p><%=flash[:alert] %></p>
+<%#=@dashboard.each do |transaction| %>
+  <%#= transaction.value %>
+  <%# end %>
+  <%= form_with url: "/parser/upload", model: @store do |form| %>
+    <%= form.file_field(:txt_file, accept:'text/plain') %>
+    <%= form.submit %>
+  <% end %>
