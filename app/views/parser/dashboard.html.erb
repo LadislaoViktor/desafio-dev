@@ -7,10 +7,13 @@
       <%= form.collection_select(:store_id, @stores, :id, :name, prompt: "Selecione") %>
     </div>
     <div class="col">
-      <%= form.submit "Buscar" %>
+      <%= form.submit "Filtrar" %>
     </div>
   </div>
 <% end %>
+<div class="col">
+  <%= link_to "Carregar arquivo", parser_index_url , type:"button"%>
+</div>
 <table>
   <thead>
     <th>Empresa</th>
