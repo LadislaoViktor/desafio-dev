@@ -22,3 +22,5 @@
  3- If file is valid, you'll be redirected to the dashboard. 
 
  On the dashboard, you can filter by Store.
+
+ P.S. I'd love to have refactored some of the code and improved the test's coverage but unfortunatelly I don't have time due to personal circunstamces.
